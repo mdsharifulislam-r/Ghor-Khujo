@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption/>
+  <note>3D render of a Living Room Interior</note>
+  <place/>
+  <categories>
+    <category value="3d"/>
+    <category value="room"/>
+    <category value="empty"/>
+    <category value="chair"/>
+    <category value="seat"/>
+    <category value="sofa"/>
+    <category value="plant"/>
+    <category value="picture"/>
+    <category value="contemporary"/>
+    <category value="flower"/>
+    <category value="vase"/>
+    <category value="pot"/>
+    <category value="rug"/>
+    <category value="window"/>
+    <category value="floor"/>
+    <category value="curtain"/>
+    <category value="light"/>
+    <category value="modern"/>
+    <category value="natural"/>
+    <category value="sun"/>
+    <category value="wood"/>
+    <category value="plank"/>
+    <category value="wall"/>
+    <category value="render"/>
+  </categories>
+</comment>

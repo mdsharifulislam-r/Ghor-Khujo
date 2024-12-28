@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>modern city</caption>
+  <note>modern city</note>
+  <place/>
+  <categories>
+    <category value="road"/>
+    <category value="street"/>
+    <category value="urban"/>
+    <category value="modern"/>
+    <category value="asia"/>
+    <category value="china"/>
+    <category value="business"/>
+    <category value="building"/>
+    <category value="architecture"/>
+    <category value="city"/>
+    <category value="outdoor"/>
+    <category value="skyscraper"/>
+    <category value="nobody"/>
+    <category value="commercial"/>
+    <category value="skyline"/>
+    <category value="exterior"/>
+    <category value="cityscape"/>
+    <category value="panorama"/>
+    <category value="sky"/>
+    <category value="cloud"/>
+    <category value="landmark"/>
+    <category value="center"/>
+    <category value="tower"/>
+    <category value="financial"/>
+    <category value="office"/>
+    <category value="future"/>
+    <category value="futuristic"/>
+    <category value="shanghai"/>
+    <category value="aerial"/>
+    <category value="view"/>
+    <category value="high"/>
+    <category value="cloudscape"/>
+    <category value="floor"/>
+    <category value="cement"/>
+    <category value="day"/>
+    <category value="space"/>
+    <category value="downtown"/>
+    <category value="way"/>
+    <category value="footpath"/>
+    <category value="design"/>
+    <category value="blank"/>
+    <category value="brick"/>
+    <category value="marble"/>
+    <category value="front"/>
+    <category value="wall"/>
+    <category value="style"/>
+    <category value="glass"/>
+    <category value="copy"/>
+    <category value="entrance"/>
+    <category value="empty"/>
+  </categories>
+</comment>
