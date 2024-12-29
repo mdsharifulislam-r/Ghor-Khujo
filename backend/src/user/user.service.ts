@@ -76,13 +76,13 @@ export class UserService {
 
             const token = this.jwtService.sign(`${user.user_id}`)
            res.cookie('auth-token',token,{
-            httpOnly:false,
+            httpOnly:true,
           secure:true,
             sameSite:"none"
            })
 
            const response = res.cookie('verify-token',"",{
-            httpOnly:false,
+            httpOnly:true,
             secure:true,
             sameSite:"none"
            })
