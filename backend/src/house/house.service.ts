@@ -135,6 +135,8 @@ export class HouseService {
 
       return tempData.reverse();
     } catch (error) {
+      console.log(error);
+      
       return new InternalServerErrorException('Server error!');
     }
   }

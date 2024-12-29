@@ -220,7 +220,7 @@ export class UserService {
                  })
             }
 
-            await this.userRepo.query('INSERT INTO `user`(`name`,  `email`, `image`,`verified`) VALUES (?,?,?.?)',[data?.name,data.email,data.image||"",true])
+            await this.userRepo.query('INSERT INTO `user`(`name`,  `email`, `image`,`verified`) VALUES (?,?,?,?)',[data?.name,data.email,data.image||"",true])
 
             const rows = await this.userRepo.query('SELECT * from user')
 
