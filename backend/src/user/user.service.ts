@@ -41,9 +41,12 @@ export class UserService {
             const token = this.jwtService.sign(user_id.toString())
             const response= res.cookie('verify-token',token,{
                 httpOnly:true,
-        
+                secure:true,
                 sameSite:"none"
                })
+               response.setHeader(
+                "set-cookie",`auth-token=${token}`
+               )
             return this.mailService.sendMail(data?.email,token,response)
         } catch (error) {
             console.log(error);
@@ -82,7 +85,7 @@ export class UserService {
 
            const response = res.cookie('verify-token',"",{
             httpOnly:true,
-        
+            secure:true,
             sameSite:"none"
            })
 
@@ -197,13 +200,13 @@ export class UserService {
                 const token = this.jwtService.sign(`${exists.user_id}`)
                 res.cookie('auth-token',token,{
                  httpOnly:true,
-             
+                 secure:true,
                  sameSite:"none"
                 })
      
                 const response = res.cookie('verify-token',"",{
                  httpOnly:true,
-            
+                 secure:true,
                  sameSite:"none"
                 })
      
@@ -228,13 +231,13 @@ export class UserService {
             const token = this.jwtService.sign(`${user.user_id}`)
             res.cookie('auth-token',token,{
              httpOnly:true,
-          
+             secure:true,
              sameSite:"none"
             })
  
             const response = res.cookie('verify-token',"",{
              httpOnly:true,
-        
+             secure:true,
              sameSite:"none"
             })
  
