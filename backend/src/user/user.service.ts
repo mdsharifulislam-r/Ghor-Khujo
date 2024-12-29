@@ -42,7 +42,7 @@ export class UserService {
             const response= res.cookie('verify-token',token,{
                 httpOnly:true,
                 secure:true,
-                sameSite:"strict"
+                sameSite:"lax"
                })
             return this.mailService.sendMail(data?.email,token,response)
         } catch (error) {
@@ -77,13 +77,13 @@ export class UserService {
            res.cookie('auth-token',token,{
             httpOnly:true,
             secure:true,
-            sameSite:"strict"
+            sameSite:"lax"
            })
 
            const response = res.cookie('verify-token',"",{
             httpOnly:true,
             secure:true,
-            sameSite:"strict"
+            sameSite:"lax"
            })
 
             return response.json({
@@ -198,13 +198,13 @@ export class UserService {
                 res.cookie('auth-token',token,{
                  httpOnly:true,
                  secure:true,
-                 sameSite:"strict"
+                 sameSite:"lax"
                 })
      
                 const response = res.cookie('verify-token',"",{
                  httpOnly:true,
                  secure:true,
-                 sameSite:"strict"
+                 sameSite:"lax"
                 })
      
                  return response.json({
@@ -229,13 +229,13 @@ export class UserService {
             res.cookie('auth-token',token,{
              httpOnly:true,
              secure:true,
-             sameSite:"strict"
+             sameSite:"lax"
             })
  
             const response = res.cookie('verify-token',"",{
              httpOnly:true,
              secure:true,
-             sameSite:"strict"
+             sameSite:"lax"
             })
  
              return response.json({
