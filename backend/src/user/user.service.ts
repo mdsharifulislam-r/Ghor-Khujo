@@ -78,13 +78,13 @@ export class UserService {
            res.cookie('auth-token',token,{
             httpOnly:true,
           secure:true,
-           
+            sameSite:"none"
            })
 
            const response = res.cookie('verify-token',"",{
             httpOnly:true,
             secure:true,
-          
+            sameSite:"none"
            })
    
 
