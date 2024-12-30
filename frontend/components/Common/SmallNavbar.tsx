@@ -4,6 +4,7 @@ import ProfileButton from './ProfileButton/ProfileButton'
 import { CiMenuFries } from "react-icons/ci";
 import { RxCross1 } from 'react-icons/rx';
 import Link from 'next/link';
+import Image from 'next/image';
 export default function SmallNavbar({links}:{links:React.JSX.Element[]}) {
   const Navlinks = links?.map((item,index)=>{
     return (
@@ -20,7 +21,7 @@ export default function SmallNavbar({links}:{links:React.JSX.Element[]}) {
     <div className='w-full md:hidden block py-4 px-5 bg-white'>
     <div className='w-full flex justify-between place-items-center'>
     <div className="logo">
-        <h1 className='text-2xl font-bold text-text_color'>Logo</h1>
+    <Image src={'/image/logo.webp'} alt='' height={100} width={100}/>
       </div>
       <div className='flex place-items-center gap-4'>
       {hydred&&<ProfileButton/>}
@@ -36,7 +37,7 @@ export default function SmallNavbar({links}:{links:React.JSX.Element[]}) {
     </div>
   <div className={`sidebar ${!open?"-translate-x-full":"translate-x-0"} transition-all duration-300 p-5 w-[80%] bg-white h-screen`}>
     <div className='py-3 border-b flex justify-between place-items-center'>
-        <h1 className='text-2xl'>LOGO</h1>
+    <Image src={'/image/logo.webp'} alt='' height={60} width={70}/>
         <span className='text-2xl cursor-pointer'><RxCross1/></span>
     </div>
     <div>

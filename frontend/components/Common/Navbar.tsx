@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import ProfileButton from './ProfileButton/ProfileButton'
 import SmallNavbar from './SmallNavbar'
+import Image from 'next/image'
 
 export default function Navbar() {
   const links = [
@@ -22,10 +23,10 @@ export default function Navbar() {
   ))
   return (
     <>
-    <div className='w-full sticky md:block hidden top-0 z-30 bg-white py-7 shadow-lg'>
+    <div className='w-full sticky md:block hidden top-0 z-30 bg-white py-4 shadow-lg'>
       <div className="container mx-auto flex justify-between place-items-center">
         <div className="logo">
-          <h1 className='text-4xl font-bold text-text_color'>Logo</h1>
+         <Image src={'/image/logo.webp'} alt='' height={100} width={100}/>
         </div>
         <div className="links flex gap-4 text-lg text-text_color font-medium">
           {links}

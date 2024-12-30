@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import { FaArrowRight } from "react-icons/fa6";
 function PrevArrow({className,style,onClick}:{className?:string,style?:any,onClick?:()=>void}){
   return (
-    <div className='absolute right-0 top-0 h-full flex justify-center place-items-center'>
+    <div className='absolute md:flex right-0 top-0 h-full hidden justify-center place-items-center'>
  <button onClick={onClick} className='p-5 mr-20 border-2 hover:bg-primary_color transition-all duration-500 border-white text-white relative left-10 top-9'>
       <FaArrowRight/>
     </button>

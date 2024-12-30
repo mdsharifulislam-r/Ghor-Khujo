@@ -1,5 +1,6 @@
 'use client'
-import { useAppSelector } from '@/lib/hooks/hooks'
+import { logoutUser } from '@/lib/features/user.reducer'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -7,7 +8,7 @@ import React, { useEffect, useState } from 'react'
 export default function ProfileButton() {
     const user = useAppSelector(state=>state.userReducer.user)
     const [hydred,setHydred]=useState(false)
-
+    const dispatch = useAppDispatch()
     useEffect(()=>{
         setHydred(true)
     },[])
@@ -24,7 +25,7 @@ export default function ProfileButton() {
     </div>}
     {hydred &&<div className={`absolute ${user?.name?"group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto":""} pointer-events-none opacity-0 translate-y-8 transition-all duration-500 min-w-24 before:absolute before:top-0 before:left-0 before:bg-primary_color before:w-full before:h-1 min-h-14 bg-white top-10 right-0 shadow-lg`}>
       <Link className='px-4 py-2 mt-2 text-slate-700 block border-b' href={"/dashboard"}>Dashboard</Link>
-      <button className='px-4 py-2  text-slate-700 border-b'>Logout</button>
+      <button onClick={()=>dispatch(logoutUser())} className='px-4 py-2  text-slate-700 border-b'>Logout</button>
     </div>}
     </div>
     
