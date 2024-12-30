@@ -14,7 +14,7 @@ function Header({image,sideImages}:{image:string,sideImages:string}) {
   };
   const imageArr = sideImages?[image,...(sideImages.split(","))]:[image]
   const imageItems = imageArr?.map((item,index)=>(
-    <Image src={item} alt="" key={index} width={2000} height={2000} className="w-[80%] cursor-pointer hover:scale-105 transition-all duration-300  object-cover h-[60vh]" />
+    <Image src={item} alt="" key={index} width={2000} height={2000} className="w-[80%] cursor-pointer hover:scale-105 transition-all duration-300  object-cover md:h-[60vh] h-44" />
   ))
   return (
     <div className="slider-container overflow-x-hidden">
@@ -25,7 +25,7 @@ function Header({image,sideImages}:{image:string,sideImages:string}) {
      {sideImages? <Slider {...settings}>
        
         {imageItems}
-      </Slider>:<Image src={image||""} alt=""  width={2000} height={2000} className="w-full cursor-pointer hover:scale-105 transition-all duration-300  object-cover h-[60vh]" />}
+      </Slider>:<Image src={image||""} alt=""  width={2000} height={2000} className="w-full cursor-pointer hover:scale-105 transition-all duration-300  object-cover md:h-[60vh] h-44" />}
     </div>
   );
 }

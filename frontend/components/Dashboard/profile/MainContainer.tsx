@@ -30,12 +30,12 @@ export default function MainContainer() {
             setLoading(true)
             if(files){
                 const imgstr = await uploadImage(files)
-                console.log(imgstr);
+              
                 
                 setImage(imgstr)
             }
 
-            console.log(image);
+        
             
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/update`,{
                 method:"PUT",

@@ -39,7 +39,7 @@ onSubmit:async(values,action)=>{
     publishDate:new Date().toLocaleDateString()
   }
 
-  console.log(data);
+  
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/house/create`,{
     method:"POST",

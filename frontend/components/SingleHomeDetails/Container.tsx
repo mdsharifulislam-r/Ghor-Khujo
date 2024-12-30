@@ -5,11 +5,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import Reviews from './Reviews';
 import { HomeType } from '@/Types/Types';
 export default function Container({home}:{home:HomeType}) {
-  console.log(home);
+ 
   
   return (
     <div className='md:w-[70%] w-full'>
-      <div className='flex gap-4'>
+      <div className='flex md:gap-4 text-sm gap-2'>
         <span className='px-3 py-2 bg-primary_color text-white'>Featured</span>
         <span className='px-3 py-2 bg-yellow-400 text-white'>For Rent</span>
         <div className='flex place-items-center gap-2 text-sm'>
