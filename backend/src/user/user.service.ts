@@ -75,11 +75,11 @@ export class UserService {
 
 
             const token = this.jwtService.sign(`${user.user_id}`)
-           res.cookie('auth-token',token,{
-            httpOnly:true,
-          secure:true,
-            sameSite:"none"
-           })
+        //    res.cookie('auth-token',token,{
+        //     httpOnly:true,
+        //   secure:true,
+        //     sameSite:"none"
+        //    })
 
            const response = res.cookie('verify-token',"",{
             httpOnly:true,
@@ -97,7 +97,8 @@ export class UserService {
                     image:user?.image,
                     address:user.address,
                     phone:user?.phone
-                }
+                },
+                token:token
             })
 
 
@@ -218,7 +219,8 @@ export class UserService {
                          image:exists?.image,
                          address:exists.address,
                          phone:exists?.phone
-                     }
+                     },
+                     token
                  })
             }
 
@@ -249,7 +251,8 @@ export class UserService {
                      image:user?.image,
                      address:user.address,
                      phone:user?.phone
-                 }
+                 },
+                 token
              })
 
         } catch (error) {

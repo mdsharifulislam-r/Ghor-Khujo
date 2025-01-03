@@ -9,6 +9,8 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks/hooks'
 import { setUser } from '@/lib/features/user.reducer'
 import { useRouter } from 'next/navigation'
 import GoogleSignInButton from '../GoogleSignInButton/GoogleSignInButton'
+import Link from 'next/link'
+import { loginUser } from '@/lib/helper/loginUser'
 
 export default function MainContainer() {
   const initialValues = {
@@ -24,16 +26,7 @@ export default function MainContainer() {
     validationSchema:LoginSchema,
     onSubmit:async (values,action)=>{
       setLoading(true)
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-        },
-        body:JSON.stringify(values),
-        credentials:"include"
-      })
-
-      const data = await res.json()
+      const data = await loginUser(values)
 
       if(data?.status){
         setLoading(false)
@@ -74,12 +67,12 @@ export default function MainContainer() {
         <h3 className="text-gray-800 text-4xl font-extrabold">Sign in</h3>
         <p className="text-gray-800 text-sm mt-6">
           Don't have an account{" "}
-          <a
-            href="javascript:void(0);"
+          <Link
+            href={"/register"}
             className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap"
           >
             Register here
-          </a>
+          </Link>
         </p>
       </div>
       <div>

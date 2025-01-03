@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { useAppDispatch } from '@/lib/hooks/hooks';
 import { setUser } from '@/lib/features/user.reducer';
+import { loginUser } from '@/lib/helper/loginUser';
 export default function GoogleSignInButton() {
     const router = useRouter()
     const dispatch = useAppDispatch()
@@ -16,21 +17,11 @@ export default function GoogleSignInButton() {
       
          
           
-          const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/social-login`,{
-            method:"POST",
-            body:JSON.stringify({
-                name:user?.displayName,
-                email:user?.email,
-                image:user?.photoURL
-            }),
-            headers:{
-                "Content-Type":"application/json"
-            },
-            credentials:"include"
-        })
-    
-    
-        const data = await res.json()
+          const data = await loginUser({
+            name:user?.displayName,
+            email:user?.email,
+            image:user?.photoURL
+        },true)
    
         
         if(data.status){

@@ -8,6 +8,8 @@ import LoadingButton from '../Common/Button/Button'
 import { useRouter } from 'next/navigation'
 import { useAppSelector } from '@/lib/hooks/hooks'
 import GoogleSignInButton from '../GoogleSignInButton/GoogleSignInButton'
+import Link from 'next/link'
+import { verifyTokenSet } from '@/lib/helper/setVerifyToken'
 const initialValues={
   name:"",
   email:"",
@@ -40,6 +42,7 @@ onSubmit:async (values,action)=>{
   if(data?.statusCode==201){
     toast.success(data?.message[0])
     action.resetForm()
+    await verifyTokenSet()
     setLoading(false)
     router.push("/verify")
   }else{
@@ -61,12 +64,12 @@ onSubmit:async (values,action)=>{
         <h3 className="text-gray-800 text-4xl font-extrabold">Sign Up</h3>
         <p className="text-gray-800 text-sm mt-3">
           You have an account{" "}
-          <a
-            href="javascript:void(0);"
+          <Link
+            href="/login"
             className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap"
           >
             Login here
-          </a>
+          </Link>
         </p>
       </div>
       <div className='my-2'>

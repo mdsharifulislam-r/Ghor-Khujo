@@ -9,21 +9,21 @@ export default function Container({home}:{home:HomeType}) {
   
   return (
     <div className='md:w-[70%] w-full'>
-      <div className='flex md:gap-4 text-sm gap-2'>
+      <div className='flex md:gap-4 md:text-sm text-xs gap-2'>
         <span className='px-3 py-2 bg-primary_color text-white'>Featured</span>
         <span className='px-3 py-2 bg-yellow-400 text-white'>For Rent</span>
-        <div className='flex place-items-center gap-2 text-sm'>
+        <div className='flex place-items-center gap-2 '>
             <span className='text-primary_color'><FaRegCalendarDays/></span>
             <span className='text-slate-600'>{home?.publishDate}</span>
         </div>
-        <div className='flex place-items-center gap-2 text-sm'>
+        <div className='flex place-items-center gap-2 '>
             <span className='text-emerald-500'><FaRegComments/></span>
             <span className='text-slate-600'>36 comments</span>
             
         </div>
         
       </div>
-      <h1 className='text-5xl text-text_color font-bold my-5'>{home?.title}</h1>
+      <h1 className='md:text-5xl text-3xl text-text_color font-bold my-5'>{home?.title}</h1>
       <div className='flex place-items-center gap-2 text-slate-500'>
         <span className='text-primary_color'><FaLocationDot/></span>
         <span>{home?.address}</span>

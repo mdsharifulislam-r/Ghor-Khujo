@@ -16,7 +16,7 @@ export function StarMaker({star}:{star:string}){
     const stars = new Array(Math.floor(parseInt(star))).fill("4").map((_,index)=>(<FaStar key={index}/>))
     const regStar = new Array(regStarAm).fill("4").map((_,index)=>(<FaRegStar key={index}/>))
     return (
-        <div className='flex text-yellow-500'>
+        <div className='flex md:text-base text-sm text-yellow-500'>
             {stars}
             {isFloor?<FaRegStarHalfStroke/>:""}
             {regStar}
@@ -57,19 +57,19 @@ export async function ReviewCard({review}:{review:ReviewType}){
 
   return (
     <div className='w-full px-4 py-8 border-b flex gap-2 place-items-center my-3'>
-      <Image src={user?.image||"/image/avtar/avtar.png"} alt='' className=' size-24 object-cover rounded-full' width={200} height={200} />
+      <Image src={user?.image||"/image/avtar/avtar.png"} alt='' className=' md:size-24 size-14 object-cover rounded-full' width={200} height={200} />
       <div className='flex-grow'>
 
         <div className='flex justify-between w-full'>
         <div>
-        <h1 className='text-xl mb-2'>{user?.name}</h1>
+        <h1 className='md:text-xl text-sm mb-2'>{user?.name}</h1>
         <div>
           <StarMaker star={review?.star.toString()}/>
         </div>
         </div>
-        <span className='px-3 py-2 text-slate-600 border rounded-full h-fit'>{review?.date}</span>
+        <span className='px-3 py-2 text-slate-600 border md:text-base text-sm rounded-full h-fit'>{review?.date}</span>
         </div>
-       <p className='mt-2 text-slate-600'>{review?.message}</p>
+       <p className='mt-2 text-slate-600 md:text-base text-xs'>{review?.message}</p>
         
       </div>
     </div>

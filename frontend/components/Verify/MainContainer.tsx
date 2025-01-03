@@ -1,4 +1,5 @@
 'use client'
+import { verifyTokenSet } from '@/lib/helper/setVerifyToken'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -14,11 +15,11 @@ export default function MainContainer({id}:{id:string}) {
         headers:{
             "Content-Type":"application/json"
         }
-    }).then(res=>res.json()).then(data=>{
+    }).then(res=>res.json()).then(async data=>{
         if(data.status){
             setLoading(false)
             setStaus(data.message)
-
+            await verifyTokenSet(true)
             setTimeout(() => {
                 router.push("/login")
             },1000);

@@ -2,6 +2,7 @@ import { UserType } from "@/Types/Types";
 import { getStorLocal, setStorLocal } from "../hooks/localHooks";
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { logoutUserServer } from "../helper/logoutUser";
 
 
 interface initialvalue{
@@ -31,10 +32,10 @@ const userSlice = createSlice({
                 method:"DELETE",
                 credentials:"include"
             }).then(res=>res.json())
-            .then(data=>{
+            .then( async data=>{
                 if(data.status){
                 toast.success(data.message)
-                
+                await logoutUserServer()
                 }else{
                     toast.error(data.message)
                 }
