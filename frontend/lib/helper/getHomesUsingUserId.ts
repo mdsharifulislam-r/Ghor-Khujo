@@ -6,7 +6,8 @@ export async function getHomeByUserId() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/house/user`,{
             credentials:'include',
             headers:{
-                "Cookie":`auth-token=${token}`
+                "Cookie":`auth-token=${token}`,
+                "authorization":`${token}`
             }
         
         })

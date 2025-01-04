@@ -7,7 +7,9 @@ export class LoggerMiddleware implements NestMiddleware {
   constructor(private jwtService:JwtService){}
  async use(req: Request, res: Response, next: () => void) {
     try {
-      const token = req.cookies['auth-token']
+      const token = req.headers.authorization
+      console.log(token);
+      
       const isVarify =await this.jwtService.verifyAsync(token)
      
       if(isVarify){

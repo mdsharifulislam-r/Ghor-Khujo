@@ -5,6 +5,7 @@ import InputBox from '../profile/InputBox'
 import LoadingButton from '@/components/Common/Button/Button'
 import { useFormik } from 'formik'
 import toast from 'react-hot-toast'
+import { getAuthToken } from '@/lib/helper/getAuthToken'
 
 export default function MainContainer() {
   const initialValue = {
@@ -17,11 +18,13 @@ export default function MainContainer() {
     initialValues:initialValue,
     onSubmit:async(values,action)=>{
       setLoading(true)
+      const authToken = await getAuthToken()
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/chnage-password`,{
         method:"PUT",
         body:JSON.stringify(values),
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/json",
+          "authorization":`${authToken}`
         },
         credentials:"include"
       })

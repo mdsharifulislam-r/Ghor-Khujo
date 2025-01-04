@@ -33,7 +33,7 @@ export class UserController {
 
     @Put('update')
     updateUser(@Body() data:any,@Req() req:Request){
-        const jwtToken = req?.cookies['auth-token']
+        const jwtToken = req.headers.authorization
         const user_id = this.jwtService.decode(jwtToken)
         return this.userService.updateUser(user_id,data)
     }

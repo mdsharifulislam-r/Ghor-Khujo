@@ -8,6 +8,7 @@ import { useFormik } from 'formik'
 import LoadingButton from '../Common/Button/Button'
 import { HomeType } from '@/Types/Types'
 import toast from 'react-hot-toast'
+import { getAuthToken } from '@/lib/helper/getAuthToken'
 
 export default function MainContainer() {
 const initialValue={
@@ -39,12 +40,13 @@ onSubmit:async(values,action)=>{
     publishDate:new Date().toLocaleDateString()
   }
 
-  
+  const token = await getAuthToken()
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/house/create`,{
     method:"POST",
     headers:{
-      "Content-Type":"application/json"
+      "Content-Type":"application/json",
+      "authorization":`${token}`
     },
     body:JSON.stringify(data),
     credentials:"include"

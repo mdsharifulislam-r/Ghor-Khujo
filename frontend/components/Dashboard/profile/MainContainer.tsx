@@ -44,13 +44,13 @@ export default function MainContainer() {
                 method:"PUT",
                 headers:{
                     'Content-Type':"application/json",
-                    'Cookie':`auth-token=${authToken}`
+                    'authorization':`${authToken}`
                 },
                 body:JSON.stringify({
                     ...values,
                     image:image||user?.image
                 }),
-                credentials:"include"
+              
             })
             const data = await res.json()
             if(data?.status){

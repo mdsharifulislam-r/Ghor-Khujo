@@ -137,7 +137,7 @@ export class UserService {
 
     async changePassword(oldPass:string,newPass:string,req:Request){
        try {
-        const token = req.cookies['auth-token']
+        const token = req.headers.authorization
         const user_id = this.jwtService.decode(token)
         const user= await this.userRepo.query('SELECT * FROM user WHERE user_id=?',[user_id])
         const match = await bycrpt.compare(oldPass,user[0]?.password)

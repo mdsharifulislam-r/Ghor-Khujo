@@ -10,7 +10,7 @@ export class HouseController {
     constructor(private houseService:HouseService,private jwtService:JwtService){}
     @Post('create')
     createPost(@Body() data:HouseType,@Req() req:Request){
-        const jwtToken = req?.cookies['auth-token']
+        const jwtToken = req?.headers.authorization
         const user_id = this.jwtService.decode(jwtToken)
         return this.houseService.createHouse(data,user_id)
         
@@ -45,7 +45,7 @@ export class HouseController {
 
     @Get('user')
     getHouseUsingUserId(@Req() req:Request){
-        const jwtToken = req?.cookies['auth-token']
+        const jwtToken = req?.headers.authorization
         const user_id = this.jwtService.decode(jwtToken)
         return this.houseService.getHouseUsingUserId(user_id)
     }
