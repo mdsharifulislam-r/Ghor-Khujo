@@ -8,6 +8,9 @@ import { HomeType } from "@/Types/Types";
 import { getSingleUser } from "@/lib/helper/getSingleUser";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks/hooks";
+import { setFavarite } from "@/lib/features/user.reducer";
+import { FaHeart } from "react-icons/fa";
 export default function HomeCard({home}:{home:HomeType}) {
   const [user,setUser]=useState<{name:string,image:string}>({name:"",image:""}
    
@@ -20,6 +23,16 @@ export default function HomeCard({home}:{home:HomeType}) {
         }
       })
   },[])
+
+  const dispatch = useAppDispatch()
+  const favarite = useAppSelector(state=>state.userReducer.favarite)
+  console.log('render');
+  
+  const func = () =>{
+    dispatch(setFavarite(home))
+   
+  }
+  const exist = favarite.some(item=>item.house_id==home?.house_id)
   return (
     <motion.div initial={{opacity:0,y:5}} animate={{opacity:1,y:0}} transition={{duration:0.3}} className="w-full cursor-pointer flex group md:gap-5 gap-2 shadow-lg md:p-6 p-3 overflow-hidden border">
       <div className="imageBox relative lg:w-[40%]  md:h-60 h-50 md:w-1/2 w-[30%] overflow-hidden">
@@ -74,8 +87,9 @@ export default function HomeCard({home}:{home:HomeType}) {
             <button className="p-2 text-xl bg-slate-100 text-slate-400">
               <IoIosResize />
             </button>
-            <button className="p-2 text-xl bg-slate-100 text-slate-400">
-              <CiHeart />
+            <button onClick={func} className="p-2 text-xl bg-slate-100 text-slate-400">
+              {!exist?<span><CiHeart /></span>
+              :<span className=" text-primary_color"><FaHeart/></span>}
             </button>
           </div>
         </div>

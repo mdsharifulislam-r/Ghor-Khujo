@@ -10,7 +10,7 @@ export class ReviewController {
 
     @Post('post')
     postReview(@Body() data:ReviewDto,@Req() req:Request){
-        const jwtToken = req?.cookies['auth-token']
+        const jwtToken = req.headers.authorization
         const user_id = this.jwtService.decode(jwtToken)
         return this.reviewService.createReview(data,user_id)
     }
