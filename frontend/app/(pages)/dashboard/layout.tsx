@@ -1,7 +1,12 @@
 import ShowDashbordButton from '@/components/Dashboard/ShowDashbordButton';
 import Sidebar from '@/components/Dashboard/Sidebar';
+import { Metadata } from 'next';
 import React, { ReactNode } from 'react'
 import { PiGreaterThanLight } from "react-icons/pi";
+export const metadata: Metadata = {
+  title: "Ghor Khujo | Dashboard",
+  description: "Search your dream house",
+};
 
 export default function layout({children}:{children:ReactNode}) {
   return (
