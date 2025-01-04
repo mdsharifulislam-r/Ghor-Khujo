@@ -9,10 +9,7 @@ export async function middleware(Request:NextRequest) {
        const path = Request.nextUrl.pathname
        const auth = (await cookies()).get("auth-token")?.value
        const verifyToken = (await cookies()).get("verify-token")?.value
-      
     
-     console.log(auth);
-     
        
        if(paths.includes(path) && auth){
         return NextResponse.redirect(new URL("/",Request.url))
@@ -31,5 +28,5 @@ export async function middleware(Request:NextRequest) {
 }
 
 export const config = {
-    matcher:['/login','/register',"/verify/:path*"]
+    matcher:['/login','/register',"/verify/:path*","/dashboard/:path*"]
 }
