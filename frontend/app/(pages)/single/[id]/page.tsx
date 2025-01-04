@@ -1,3 +1,4 @@
+import Loader from '@/components/Common/Loader/Loader'
 import MainContainer from '@/components/SingleHomeDetails/MainContainer'
 import { getSingleHouse } from '@/lib/helper/getSingleHouse'
 import { HomeType } from '@/Types/Types'
@@ -8,7 +9,7 @@ export default async function page({params}:{params:any}) {
   const home:HomeType = await getSingleHouse(id)
   return (
     <div>
-      <Suspense fallback={"Loading"}>
+      <Suspense fallback={<Loader/>}>
       <MainContainer home={home}/>
       </Suspense>
       

@@ -1,3 +1,4 @@
+import Loader from "@/components/Common/Loader/Loader";
 import Aboutus from "@/components/Home/Aboutus";
 import CardSection from "@/components/Home/CardSection";
 import Gallery from "@/components/Home/Gallery";

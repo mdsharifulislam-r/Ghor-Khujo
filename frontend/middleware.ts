@@ -16,7 +16,7 @@ export async function middleware(Request:NextRequest) {
         return NextResponse.redirect(new URL("/",Request.url))
        }
 
-       if(dashPath.includes(path)&&!auth){
+       if(path.includes("dashboard")&&!auth){
         return NextResponse.redirect(new URL("/",Request.url))
        }
        if(path.includes("verify")&&!verifyToken){
