@@ -9,6 +9,7 @@ import { UpdateSchema } from '@/validation/validation'
 import { uploadImage } from '@/lib/helper/uploadImage'
 import toast from 'react-hot-toast'
 import { setUser } from '@/lib/features/user.reducer'
+import { getAuthToken } from '@/lib/helper/getAuthToken'
 
 export default function MainContainer() {
     const [files,setFiles]=useState<any>()
@@ -36,11 +37,14 @@ export default function MainContainer() {
             }
 
         
+            const authToken = await getAuthToken()
+            
             
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/update`,{
                 method:"PUT",
                 headers:{
-                    'Content-Type':"application/json"
+                    'Content-Type':"application/json",
+                    'Cookie':`auth-token=${authToken}`
                 },
                 body:JSON.stringify({
                     ...values,
