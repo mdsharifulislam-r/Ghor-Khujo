@@ -3,7 +3,8 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { getStorLocal } from "./lib/hooks/localHooks";
 
-const paths = ['/login','/register',"/verify/:path*","/dashboard/:path*"]
+const paths = ['/login','/register',"/verify/:path*",]
+const dashPath = ["/dashboard/:path*"]
 export async function middleware(Request:NextRequest) {
     try {
        const path = Request.nextUrl.pathname
@@ -15,6 +16,9 @@ export async function middleware(Request:NextRequest) {
         return NextResponse.redirect(new URL("/",Request.url))
        }
 
+       if(dashPath.includes(path)&&!auth){
+        return NextResponse.redirect(new URL("/",Request.url))
+       }
        if(path.includes("verify")&&!verifyToken){
         return NextResponse.redirect(new URL("/register",Request.url))
        }
