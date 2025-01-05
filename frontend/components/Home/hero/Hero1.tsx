@@ -15,7 +15,7 @@ export default function Hero1() {
           <h1 data-aos="fade-up" className='md:text-6xl text-3xl font-bold text-white text-center my-5 leading-[1.2]'>Find Your Dream <br /> House By Us</h1>
 
           <div data-aos="fade-up" data-aos-delay={5}>
-            <Link href={""}   className='px-10 flex md:text-base text-sm place-items-center gap-4 py-4 bg-primary_color text-white hover:bg-white hover:text-black transition-all duration-500 relative before:absolute before:bg-white before:w-full before:h-full before:left-0 before:top-0 before:-z-[1]'>
+            <Link href={"/homes"}   className='px-10 flex md:text-base text-sm place-items-center gap-4 py-4 bg-primary_color text-white hover:bg-white hover:text-black transition-all duration-500 relative before:absolute before:bg-white before:w-full before:h-full before:left-0 before:top-0 before:-z-[1]'>
             <span>Explore Now</span>
             <span><LuMoveRight/></span>
             </Link>

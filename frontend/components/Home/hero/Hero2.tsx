@@ -13,7 +13,7 @@ export default function Hero2() {
           <h1 className='md:text-6xl text-3xl font-bold text-white text-start my-5 leading-[1.2]'>Find Your Dream <br /> House By Us</h1>
           <p className='text-base font-light mb-4 pl-7 border-l border-l-primary_color text-white lg:w-[40%] md:w-[60%] w-[80%]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic expedita asperiores accusantium distinctio numquam, illo iste tempora ipsum. Eius, dignissimos.</p>
           <div>
-            <Link href={""} className='px-10 flex place-items-center gap-4 py-4 md:text-base text-sm bg-primary_color text-white hover:bg-white hover:text-black transition-all duration-500 relative before:absolute before:bg-white before:w-full before:h-full before:left-0 before:top-0 before:-z-[1]'>
+            <Link href={"/homes"} className='px-10 flex place-items-center gap-4 py-4 md:text-base text-sm bg-primary_color text-white hover:bg-white hover:text-black transition-all duration-500 relative before:absolute before:bg-white before:w-full before:h-full before:left-0 before:top-0 before:-z-[1]'>
             <span>Explore Now</span>
             <span><LuMoveRight/></span>
             </Link>
