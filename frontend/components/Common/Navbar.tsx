@@ -25,9 +25,9 @@ export default function Navbar() {
     <>
     <div className='w-full sticky md:block hidden top-0 z-30 bg-white py-4 shadow-lg'>
       <div className="container mx-auto flex justify-between place-items-center">
-        <div className="logo">
+        <Link href={"/"} className="logo block">
          <Image src={'/image/logo.webp'} alt='' height={100} width={100}/>
-        </div>
+        </Link>
         <div className="links flex gap-4 text-lg text-text_color font-medium">
           {links}
          

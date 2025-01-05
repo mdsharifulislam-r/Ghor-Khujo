@@ -20,9 +20,9 @@ export default function SmallNavbar({links}:{links:React.JSX.Element[]}) {
   return (
     <div className='w-full md:hidden block py-4 px-5 bg-white'>
     <div className='w-full flex justify-between place-items-center'>
-    <div className="logo">
+    <Link href={"/"} className="logo block">
     <Image src={'/image/logo.webp'} alt='' height={100} width={100}/>
-      </div>
+      </Link>
       <div className='flex place-items-center gap-4'>
       {hydred&&<ProfileButton/>}
       <button onClick={()=>setOpen(!open)} className='px-4 py-2.5 bg-primary_color text-white'>
