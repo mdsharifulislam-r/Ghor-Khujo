@@ -11,10 +11,6 @@ export default function Navbar() {
       text:"Homes"
     },
     {
-      link:"/blogs",
-      text:"Blogs"
-    },
-    {
       link:"/contact",
       text:"Contact"
     },
